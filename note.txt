@@ -17,3 +17,5 @@ git push origin master
 git pull origin master
 
 git --set-upstream origin master
+
+git checkout -b s19
