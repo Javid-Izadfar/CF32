@@ -13,3 +13,5 @@ git remote add origin https://github.com/Javid-Izadfar/CF32.git
 git remote -v
 
 git push origin master
+
+git pull
