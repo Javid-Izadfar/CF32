@@ -14,4 +14,4 @@ git remote -v
 
 git push origin master
 
-git pull
+git pull --foo
