@@ -19,3 +19,5 @@ git pull origin master
 git checkout -b s19
 
 git push --set-upstream origin s19
+
+git merge s19
