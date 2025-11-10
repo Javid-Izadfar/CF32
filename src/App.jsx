@@ -1,24 +1,32 @@
-import Title from "./components/Title";
-import Person from "./components/Person";
-import { people } from "./utils";
+// import State from "./components/State";
+// import Search from "./components/Search";
+// import WordCount from "./components/WordCount";
+
+import { useState } from "react";
+import { Faker, fa, base } from "@faker-js/faker";
+import Clock from "./components/Clock";
+
+const faker = new Faker({
+  locale: [base, fa]
+});
+const text = faker.lorem.paragraph();
 
 const App = () => {
+  const [clockIsVisible, setClockIsVisible] = useState(false);
+
+  const onToggleClick = () => {
+    setClockIsVisible(!clockIsVisible);
+  };
+
   return (
     <>
-      <Title text={`people: ${people.length}`} />
-      {/* <h1>People: {people.length}</h1> */}
-      <ul>
-        {people.map((person) => {
-          return <Person key={person.id} person={person} />;
-          // return (
-          //   <li key={person.id} className="person" style={{ color: "red" }}>
-          //     {person.name}: {person.city}
-          //     <br />
-          //     {person.age > 30 ? <strong>Old</strong> : <div>young</div>}
-          //   </li>
-          // );
-        })}
-      </ul>
+      {text}
+      <br />
+      {clockIsVisible && <Clock />}
+      <button onClick={onToggleClick}>Toggle</button>
+      {/* <State /> */}
+      {/* <Search /> */}
+      {/* <WordCount /> */}
     </>
   );
 };
