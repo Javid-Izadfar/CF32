@@ -7,6 +7,7 @@ import ViewA from "./views/A";
 import ViewB from "./views/B";
 import ViewC from "./views/C";
 import ViewD from "./views/D";
+import ViewMenu from "./views/Menu";
 import Nav from "./components/Nav";
 
 createRoot(document.getElementById("root")).render(
@@ -14,6 +15,7 @@ createRoot(document.getElementById("root")).render(
     <BrowserRouter>
       <Nav />
       <Routes>
+        <Route path="/" element={<ViewMenu />} />
         <Route path="/a" element={<ViewA />} />
         <Route path="/b" element={<ViewB />} />
         <Route path="/c/*" element={<ViewC />} />
